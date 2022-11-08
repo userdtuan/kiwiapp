@@ -1,0 +1,22 @@
+<h1>Update category</h1>
+<%= form_for :category, url: category_update_apply_path(@category.id), method: :post do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title, value: @category.title %>
+  </p>
+ 
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description, value: @category.description %>
+  </p>
+
+   <p>
+    <%= f.label :type %><br>
+    <%= f.text_field :loai, value: @category.loai %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+<p><%= notice %></p>
