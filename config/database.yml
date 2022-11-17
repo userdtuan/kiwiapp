@@ -15,25 +15,23 @@
 # gem "pg"
 #
 default: &default
-  # For details on connection pooling, see Rails configuration guide
-  # https://guides.rubyonrails.org/configuring.html#database-pooling
   adapter: postgresql
   encoding: unicode
   pool: 5432
   username: postgres
   password: postgrespw
-  host: 172.17.0.3
-  #get ip from  "docker inspect <container_id of databas container> | grep IPAddress"
+  host: 172.17.0.2
   database: postgres
+
 development:
   <<: *default
-  database: kiwiapp_development
+  database: kiwiapp_final_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: kiwiapp
+  #username: kiwiapp_final
 
   # The password associated with the postgres role (username).
   #password:
@@ -61,7 +59,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: kiwiapp_test
+  database: kiwiapp_final_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -85,6 +83,6 @@ test:
 #
 production:
   <<: *default
-  database: kiwiapp_production
-  username: kiwiapp
-  password: <%= ENV["KIWIAPP_DATABASE_PASSWORD"] %>
+  database: kiwiapp_final_production
+  username: kiwiapp_final
+  password: <%= ENV["KIWIAPP_FINAL_DATABASE_PASSWORD"] %>

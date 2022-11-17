@@ -2,12 +2,12 @@
 
 one:
   title: MyString
-  description: MyString
+  description: MyText
   kind: MyString
   author: MyString
 
 two:
   title: MyString
-  description: MyString
+  description: MyText
   kind: MyString
   author: MyString

@@ -1,3 +1,5 @@
+
+<% if @post %>
 <div id="<%= dom_id post %>">
   <p>
     <strong>Title:</strong>
@@ -20,3 +22,15 @@
   </p>
 
 </div>
+<% else %>
+<tr>
+  <td><%= post.title %></th>
+  <td><%= post.description %></td>
+  <td><%= post.kind %></td>
+  <td><%= post.author %></td>
+  <td>
+      <%= link_to "Show", post, class:'btn btn-sm btn-secondary' %>
+  </td>
+
+</tr>
+<% end %>

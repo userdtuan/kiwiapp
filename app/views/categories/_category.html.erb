@@ -1,0 +1,30 @@
+
+<% if @category %>
+<div id="<%= dom_id category %>">
+  <p>
+    <strong>Title:</strong>
+    <%= category.title %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= category.description %>
+  </p>
+
+  <p>
+    <strong>Category type:</strong>
+    <%= category.category_type %>
+  </p>
+
+</div>
+<% else %>
+
+<tr>
+  <td><%= category.title %></th>
+  <td><%= category.description %></td>
+  <td><%= category.category_type %></td>
+  <td>
+      <%= link_to "Show", category, class:'btn btn-sm btn-secondary' %>
+  </td>
+</tr>
+<% end %>
