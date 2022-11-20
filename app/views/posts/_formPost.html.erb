@@ -50,7 +50,7 @@
   </div>
   <div class="mb-3">
     <%= form.label :category_id, style: "display: block",class:"form-label" %>
-    <%= form.select :category_id, Category.all.map { |c| [c.title, c.id] } %>
+    <%= form.select :category_id, Category.all.map { |c| [c.title, c.id] },{}, { class: "form form-group form-control" }%>
   </div>
 
   <div>
