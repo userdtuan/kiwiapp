@@ -4,6 +4,7 @@
   <td><%= post.description %></td>
   <td><%= post.kind %></td>
   <td><%= post.author %></td>
+  <td><%= post.category.title %></td>
   <td>
       <%= link_to "Edit", post, class:'btn btn-sm btn-primary' %>
       <%= button_tag 'Delete', "data-bs-target"=>"#modalDelete", type: 'reset', class:"btn btn-sm btn-danger", "data-bs-toggle"=>"modal" %>
