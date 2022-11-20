@@ -1,13 +1,13 @@
   <div class="container">
   <ul class="nav">
   <li class="nav-item">
-    <a class="nav-link <%current_page?(root_path) ? 'active' : ''%>" aria-current="page" href="<%= root_path %>">Home</a>
+    <a class="nav-link <%current_page?(root_path) ? 'active' : ''%>" aria-current="page" href="<%= root_path %>"><%= image_tag("kiwi16.png")%></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="<%= posts_path %>">Posts</a>
+    <a class="nav-link <%current_page?(posts_path) ? 'active' : ''%>" href="<%= posts_path %>">Posts</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="<%= categories_path %>">Categories</a>
+    <a class="nav-link <%current_page?(categories_path) ? 'active' : ''%>" href="<%= categories_path %>">Categories</a>
   </li>
 </ul>
 <hr class="bg-primary border-2 border-top border-primary">
