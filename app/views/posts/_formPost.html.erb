@@ -1,0 +1,65 @@
+<%# <form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form> %>
+
+<div class="modal-body">
+  <%= form_with(model: @post) do |form| %>
+  <% if @post.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% @post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :title, style: "display: block",class:"form-label" %>
+    <%= form.text_field :title, class:"form-control"%>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :description, style: "display: block",class:"form-label" %>
+    <%= form.text_area :description, class:"form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :kind, style: "display: block",class:"form-label" %>
+    <%= form.text_field :kind, class:"form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :author, style: "display: block",class:"form-label" %>
+    <%= form.text_field :author, class:"form-control" %>
+  </div>
+
+  <div>
+    
+  </div>
+
+      </div>
+      <div class="modal-footer">
+      <% if current_page?(posts_path) %>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      <% else %>
+          <%= link_to "Back", posts_path, class:"btn btn-secondary" %>
+      <% end %>
+        <%= form.submit :class =>'btn btn-primary'%>
+      </div>
+  <% end %>

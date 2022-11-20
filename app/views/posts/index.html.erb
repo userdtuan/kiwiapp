@@ -3,7 +3,8 @@
 <h1>Posts</h1>
 
 
-<%= link_to "New post", new_post_path, class:'btn btn-sm btn-success' %>
+<%= button_tag 'New post', "data-bs-target"=>"#modalAdd", type: 'reset', class:"btn btn-sm btn-success", "data-bs-toggle"=>"modal" %>
+<%= render 'posts/modalAdd'%>
 
 <table class="table">
   <thead>
