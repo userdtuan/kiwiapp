@@ -17,18 +17,17 @@
 
 <div class="modal-body">
   <%= form_with(model: defined?(post) ? post : @post) do |form| %>
-  <% if defined?(@post.errors.any) and @post.errors.any? %>
+    <% if defined?(post) and post.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
       <ul>
-        <% @post.errors.each do |error| %>
+        <% post.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
-
   <div class="mb-3">
     <%= form.label :title, style: "display: block",class:"form-label" %>
     <%= form.text_field :title, class:"form-control"%>

@@ -1,4 +1,15 @@
 <h1>Posts</h1>
+  <% if defined?(@post.errors.any) and @post.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% @post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 <%= button_tag 'New post', "data-bs-target"=>"#modalAdd", type: 'reset', class:"btn btn-sm btn-success", "data-bs-toggle"=>"modal" %>
 <%= render 'posts/modalAdd'%>
 <%= render 'tablePosts' %>
