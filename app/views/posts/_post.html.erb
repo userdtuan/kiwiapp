@@ -5,10 +5,6 @@
   <td><%= post.kind %></td>
   <td><%= post.author %></td>
   <td><%= post.category.title %></td>
-  <td>
-      <%= link_to "Edit", post, class:'btn btn-sm btn-primary' %>
-      <%= button_tag 'Delete', "data-bs-target"=>"#modalDelete", type: 'reset', class:"btn btn-sm btn-danger", "data-bs-toggle"=>"modal" %>
-      <%= render 'posts/modalDelete' ,post: post%>
-
-  </td>
+  <td><%= current_page?(posts_path) ? post.status : nil %></td>
+  <td><%= current_page?(posts_path) ? (render 'posts/tdAction', post:post) : nil %></td>
 </tr>

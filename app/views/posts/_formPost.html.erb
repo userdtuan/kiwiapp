@@ -16,8 +16,8 @@
 </form> %>
 
 <div class="modal-body">
-  <%= form_with(model: @post) do |form| %>
-  <% if @post.errors.any? %>
+  <%= form_with(model: defined?(post) ? post : @post) do |form| %>
+  <% if defined?(@post.errors.any) and @post.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
@@ -51,6 +51,10 @@
   <div class="mb-3">
     <%= form.label :category_id, style: "display: block",class:"form-label" %>
     <%= form.select :category_id, Category.all.map { |c| [c.title, c.id] },{}, { class: "form form-group form-control" }%>
+  </div>
+  <div class="mb-3">
+    <%= form.label :status, style: "display: block",class:"form-label" %>
+    <%= form.select :status, Post.statuses.keys.map {|key| [key.humanize, key]},{}, { class: "form form-group form-control" }%>
   </div>
 
   <div>

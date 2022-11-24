@@ -49,12 +49,22 @@ class CategoriesController < ApplicationController
 
   # DELETE /categories/1 or /categories/1.json
   def destroy
-    @category.destroy
+    post = Post.where(category_id:@category.id)
+    if(post.length==0)
+      @category.destroy
 
     respond_to do |format|
       format.html { redirect_to categories_url, notice: "Category was successfully destroyed." }
       format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to posts_url, notice: "Some posts are using category '"+@category.title+"' you must delete these posts first!!!!" }
+        format.json { head :no_content }
+        end
     end
+    
+    
   end
 
   private
