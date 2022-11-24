@@ -45,12 +45,13 @@
   </div>
 
   <div class="mb-3">
-    <%= form.label :author, style: "display: block",class:"form-label" %>
-    <%= form.text_field :author, class:"form-control" %>
+    <%= form.label :author_id, style: "display: block",class:"form-label" %>
+    <%= form.select :author_id, Author.all.collect { |c| [c.name, c.id] },{},  { class: "form form-group form-control" }%>
+
   </div>
   <div class="mb-3">
     <%= form.label :category_id, style: "display: block",class:"form-label" %>
-    <%= form.select :category_id, Category.all.map { |c| [c.title, c.id] },{}, { class: "form form-group form-control" }%>
+    <%= form.select :category_id, Category.all.collect { |c| [c.title, c.id] },{}, { class: "form form-group form-control" }%>
   </div>
   <div class="mb-3">
     <%= form.label :status, style: "display: block",class:"form-label" %>

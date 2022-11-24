@@ -17,6 +17,7 @@ class BooksController < ApplicationController
 
   # GET /books/1/edit
   def edit
+    # Time.now.strftime("%d/%m/%Y %H:%M")
   end
 
   # POST /books or /books.json
@@ -65,6 +66,6 @@ class BooksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def book_params
-      params.require(:book).permit(:title, :description, :price)
+    params.require(:book).permit(:title, :description, :price, :publish_at, :author_id, :category_id)
     end
 end

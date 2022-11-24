@@ -3,7 +3,7 @@
   <td><%= post.title %></th>
   <td><%= post.description %></td>
   <td><%= post.kind %></td>
-  <td><%= post.author %></td>
+  <td><%= post.author.name %></td>
   <td><%= post.category.title %></td>
   <td><%= current_page?(posts_path) ? post.status : nil %></td>
   <td><%= current_page?(posts_path) ? (render 'posts/tdAction', post:post) : nil %></td>

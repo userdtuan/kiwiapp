@@ -12,6 +12,14 @@
     <li class="nav-item">
     <a class="nav-link <%current_page?(books_path) ? 'active' : ''%>" href="<%= books_path %>">Books</a>
   </li>
+  </li>
+    <li class="nav-item">
+    <a class="nav-link <%current_page?(authors_path) ? 'active' : ''%>" href="<%= authors_path %>">Authors</a>
+  </li>
+  </li>
+    <li class="nav-item">
+    <a class="nav-link <%current_page?(users_path) ? 'active' : ''%>" href="<%= users_path %>">Users</a>
+  </li>
 </ul>
 <hr class="bg-primary border-2 border-top border-primary">
 <p> <%#= current_page?(root_path) %></p>
