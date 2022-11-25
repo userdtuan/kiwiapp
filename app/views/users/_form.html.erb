@@ -28,7 +28,7 @@
 
   <div>
     <%= form.label :level, style: "display: block" %>
-    <%= form.select :level, User.levels.keys %>
+    <%= form.select :level, User.levels.map { |key,value| [key.humanize, key] },{} %>
   </div>
 
   <div>
