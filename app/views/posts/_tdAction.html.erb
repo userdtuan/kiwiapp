@@ -1,0 +1,4 @@
+<%= button_tag 'Update', "data-bs-target"=>"#modalEdit"+post.id.to_s, type: 'reset', class:"btn btn-sm btn-primary", "data-bs-toggle"=>"modal" %>
+<%= render 'posts/modalEdit', id:post.id.to_s, post:post%>
+<%= button_tag 'Delete', "data-bs-target"=>"#modalDelete", type: 'reset', class:"btn btn-sm btn-danger", "data-bs-toggle"=>"modal" %>
+<%= render 'posts/modalDelete' ,post: post%>
