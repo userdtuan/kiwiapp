@@ -1,36 +1,10 @@
 
-<% if @post %>
-<div id="<%= dom_id post %>">
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= post.description %>
-  </p>
-
-  <p>
-    <strong>Kind:</strong>
-    <%= post.kind %>
-  </p>
-
-  <p>
-    <strong>Author:</strong>
-    <%= post.author %>
-  </p>
-
-</div>
-<% else %>
 <tr>
   <td><%= post.title %></th>
   <td><%= post.description %></td>
   <td><%= post.kind %></td>
-  <td><%= post.author %></td>
-  <td>
-      <%= link_to "Show", post, class:'btn btn-sm btn-secondary' %>
-  </td>
-
+  <td><%= post.author.name %></td>
+  <td><%= post.category.title %></td>
+  <td><%= current_page?(posts_path) ? post.status : nil %></td>
+  <td><%= current_page?(posts_path) ? (render 'posts/tdAction', post:post) : nil %></td>
 </tr>
-<% end %>

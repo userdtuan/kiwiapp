@@ -1,0 +1,32 @@
+<div id="<%= dom_id book %>">
+  <p>
+    <strong>Title:</strong>
+    <%= book.title %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= book.description %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= book.price %>$
+  </p>
+
+  <p>
+    <strong>Publish Date:</strong>
+    <%= book.publish_at %>
+  </p>
+
+  <p>
+    <strong>Category:</strong>
+    <%= book.category.title %>
+  </p>
+
+  <p>
+    <strong>Author:</strong>
+    <%= Author.find(book.author_id).name %>
+  </p>
+
+</div>

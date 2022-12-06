@@ -1,0 +1,6 @@
+<div id="<%= dom_id order_detail %>">
+  <p>Book name: <%= Book.find(order_detail.book_id).title %></p>
+  <p>Price: <%= Book.find(order_detail.book_id).price%>$ | Quantity: <%= order_detail.quantity %> |   <%= link_to "Edit", edit_order_detail_path(order_detail) %> 
+</p>
+</div>
+<hr>

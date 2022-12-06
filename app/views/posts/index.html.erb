@@ -1,24 +1,15 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>Posts</h1>
+  <% if defined?(@post.errors.any) and @post.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-
-<%= link_to "New post", new_post_path, class:'btn btn-sm btn-success' %>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Title</th>
-      <th scope="col">Description</th>
-      <th scope="col">Kind</th>
-      <th scope="col">Author</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @posts.each do |post| %>
-    <%= render post %>
+      <ul>
+        <% @post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
-  </tbody>
-</table>
-
+<%= button_tag 'New post', "data-bs-target"=>"#modalAdd", type: 'reset', class:"btn btn-sm btn-success", "data-bs-toggle"=>"modal" %>
+<%= render 'posts/modalAdd'%>
+<%= render 'tablePosts' %>

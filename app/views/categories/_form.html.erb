@@ -23,7 +23,7 @@
 
   <div>
     <%= form.label :category_type, style: "display: block" %>
-    <%= form.text_field :category_type %>
+    <%= form.select :category_type, Category.category_types.keys %>
   </div>
 
   <div>
