@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-    enum level: {
-        "Standard" => 0.02,
-        "Premium" => 0.05,
-        "Vip" => 0.1,
-      }
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+  has_many :order
 end
