@@ -20,8 +20,11 @@ default: &default
   pool: 5432
   username: postgres
   password: postgrespw
-  host: 172.17.0.2
-  database: postgres
+  host: 172.17.0.3
+  # username: vaulgwib
+  # password: Ig-kx1lPtowbjG3sT-pB6sYfGyVu-DR7
+  # host: tiny.db.elephantsql.com
+  # database: vaulgwib
 
 development:
   <<: *default
@@ -83,6 +86,10 @@ test:
 #
 production:
   <<: *default
-  database: kiwiapp_final_production
-  username: kiwiapp_final
-  password: <%= ENV["KIWIAPP_FINAL_DATABASE_PASSWORD"] %>
+  # database: kiwiapp_final_production
+  # username: kiwiapp_final
+  # password: <%= ENV["KIWIAPP_FINAL_DATABASE_PASSWORD"] %>
+  username: vaulgwib
+  password: Ig-kx1lPtowbjG3sT-pB6sYfGyVu-DR7
+  host: tiny.db.elephantsql.com
+  database: vaulgwib
